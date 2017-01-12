@@ -9,7 +9,7 @@ The Weather demo has been built with the aid of the following libraries
 - Require.js 
 - jQuery
 - Bootstrap
-- Express (server-side)
+- Express (server-side running under Node)
 
 The demo creates a simple ui with the user able to click on a particular day to show the forecast. 
 
