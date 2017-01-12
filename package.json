@@ -1,0 +1,14 @@
+{
+  "name": "Node-api-update",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
+    "express": "~4.13.4",
+    "jade": "~1.11.0"
+  }
+}

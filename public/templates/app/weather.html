@@ -1,0 +1,37 @@
+<header class="jumbotron">
+	<h1 class="text-center" data-bind="text:'5 day weather forecast for '+location()"><h1>
+</header>
+<div class="loading" data-bind="visible:loading">
+	<img src="images/hourglass.gif" alt="Loading image" />
+	<h3>loading the latest weather</h3>
+</div>
+<!-- ko if:loaded -->
+<section class="card">
+  <ul data-bind="foreach:items" class="days">
+	  <li data-bind="css:show()?'active':''"><span data-bind="text:day, click:$parent.show"></span></li>
+  </ul>
+
+  <div class="card-block table-responsive" data-bind="foreach:items">
+ 	<table class="table" width="100%" data-bind="visible:show">
+		<thead>
+			<tr>
+				<th width="20%" >Time</th>
+				<th width="20%" >Conditions</th>
+				<th width="20%" >Temperature</th>
+				<th width="20%" >Minimum</th>
+				<th width="20%" >Maximum</th>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach:data">
+			<tr>
+				<td width="20%"  data-bind="text:date.getHours()+':00'"></td>
+				<td width="20%"><span data-bind="text:weather[0].description"></span><img data-bind="attr:{src:'http://openweathermap.org/img/w/'+weather[0].icon+'.png'}"</td>
+				<td width="20%"  data-bind="text:main.temp+'°C'"></td>
+				<td width="20%"  data-bind="text:main.temp_min+'°C'"></td>
+				<td width="20%"  data-bind="text:main.temp_max+'°C'"></td>
+			</tr>
+		</tbody>
+	</table>
+  </div>
+</section>
+<!-- /ko -->
